@@ -3,11 +3,11 @@ import { initStore } from "./store";
 const configurStore = () => {
   const actions = {
     TOGGLE_FAV: (curState, productId) => {
-      const prodIndex = curState.product.findIndex((p) => p.id === productId);
-      const newFavStatus = !curState.product[prodIndex].isFavorite;
-      const updatedProducts = [...curState.product];
+      const prodIndex = curState.products.findIndex((p) => p.id === productId);
+      const newFavStatus = !curState.products[prodIndex].isFavorite;
+      const updatedProducts = [...curState.products];
       updatedProducts[prodIndex] = {
-        ...curState.product[prodIndex],
+        ...curState.products[prodIndex],
         isFavorite: newFavStatus,
       };
       return { products: updatedProducts };
